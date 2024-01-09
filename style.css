@@ -1,5 +1,4 @@
 @import url(Animation.css);
-/* @import url(Responsive.css); */
 
 * {
     margin: 0;
@@ -39,6 +38,7 @@ html , body {
     background-color: var(--back-color);
     color: var(--secondary-color);
     padding: 1vmax;
+    scroll-behavior: smooth;
 }
 
 nav {
@@ -138,7 +138,7 @@ nav a {
 
 .nav-content .v-nav {
     min-height: 100vh;
-    min-width: 400px;
+    min-width: 200px;
     padding: 80px 20px;
     background-color: var(--transperent-bg);
     backdrop-filter: blur(10px);
@@ -185,7 +185,7 @@ nav a {
 
 @media (max-width:400px){
     .nav-content .v-nav {
-        width: 100%;
+        width: 50%;
     }
 }
 
@@ -224,8 +224,8 @@ header {
 }
 
 .hero-left .container {
-    height: 400px;
-    width: 400px;
+    height: 450px;
+    width: 450px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -236,6 +236,7 @@ header {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: top;
     cursor: pointer;
     position: relative;
     transition: all 0.5s ease;
@@ -315,15 +316,27 @@ button ,
 }
 
 button:hover,
-.button:hover {
+.button:hover  {
     color: var(--secondary-color);
     background-color: var(--primary-color);
 }
 
+.show {
+    display: none;
+    text-transform: uppercase;
+    color: var(--title-color);
+}
 
 @media (max-width:850px) {
     .hero {
         flex-direction: column;
+    }
+
+    .hide {
+        display: none;
+    }
+    .show {
+        display: block;
     }
 
     .hero-right .container {
@@ -331,12 +344,32 @@ button:hover,
     }
 
     .hero-left {
+        display: none;
         width: 100%;
+    }
+
+    .hero-left .container {
+        margin-top: 80px;
     }
 
     .hero-right {
         width: 100%;
         text-align: center;
+        background-color: var(--back-color);
+        background-image: url(assets/HERO.jpg);
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode : overlay ;
+    }
+
+    .hero-right h1 span{
+        position: relative;
+    }
+
+    .hero-right h1 span::after {
+        content: 'Developer';
+        position: absolute;
     }
 
     .hero-right .container h3 {
@@ -653,8 +686,8 @@ h1 {
 }
 
 .service {
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
     background-color: var(--secondary-color);
     color: var(--back-color);
     border-radius: 10px;
