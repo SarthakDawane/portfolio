@@ -15,17 +15,23 @@
     --secondary-color : #fff;
     --faint-color : #999;
     --back-color : #111;
+    --mob-bg : #111;
+    --bg-change : overlay;
     --nav-color : #1111116c;
     --transperent-bg : #ffffff02;
-    
-    /* --back-color : #fff;
+}
+
+.dark {
+    --back-color : #ffffff;
     --secondary-color : #111;
     --faint-color : #444;
     --transperent-bg : #ffffff02;
     --nav-color : #ffffff6c;
+    --mob-bg : #ffffff9c;
+    --bg-change : overlay;
 
     --under-line : #007bff;
-    --primary-color : #00b7ff; */
+    --primary-color : #00b7ff;
 }
 
 html , body {
@@ -37,8 +43,9 @@ html , body {
     font-family: poppins, sans-serif;
     background-color: var(--back-color);
     color: var(--secondary-color);
-    padding: 1vmax;
+    /* padding: 1vmax; */
     scroll-behavior: smooth;
+    transition: ease-in-out 1s;
 }
 
 nav {
@@ -57,6 +64,24 @@ nav {
 
 .nav-logo {
     height: 90%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-logo .fa-solid {
+    font-size: 30px;
+    margin-left: 1vmax;
+    cursor: pointer;
+}
+
+.nav-logo .fa-sun {
+    color: orange;
+}
+
+.nav-logo .fa-moon {
+    color: #000;
+    text-shadow: 0 0 5px solid black;
 }
 
 .nav-logo img {
@@ -136,9 +161,10 @@ nav a {
     display: none;
 }
 
+
 .nav-content .v-nav {
     min-height: 100vh;
-    min-width: 200px;
+    min-width: 300px;
     padding: 80px 20px;
     background-color: var(--transperent-bg);
     backdrop-filter: blur(10px);
@@ -174,7 +200,7 @@ nav a {
     }
 
     .nav-contact a,
-    .nav-contact .fa-solid {
+    .nav .fa-solid {
         font-size: 20px;
     }
 
@@ -355,12 +381,12 @@ button:hover,
     .hero-right {
         width: 100%;
         text-align: center;
-        background-color: var(--back-color);
+        background-color: var(--mob-bg);
+        background-blend-mode : var(--bg-change) ;
         background-image: url(assets/HERO.jpg);
         background-position: top;
         background-size: cover;
         background-repeat: no-repeat;
-        background-blend-mode : overlay ;
     }
 
     .hero-right h1 span{
